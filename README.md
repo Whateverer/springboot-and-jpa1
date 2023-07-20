@@ -55,4 +55,11 @@ Gradle을 통해 필요한 의존관계들을 가져오게 된다.
 
 참고: 스프링 데이터 JPA는 스프링과 JPA를 먼저 이해하고 사용해야 하는 응용기술이다.
 
+## View 환경설정
+### Thymeleaf 템플릿 엔진
+- thymeleaf 공식 사이트: https://www.thymeleaf.org/
+- 스프링 공식 튜토리얼: https://spring.io/guides/gs/serving-web-content/
+- 스프링부트 메뉴얼: https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-templateengines
 
+- 스프링 부트 thymeleaf viewName 매핑
+  - ```resources:templates/``` + {ViewName} + ```.html```
