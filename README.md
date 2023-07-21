@@ -72,3 +72,21 @@ Gradle을 통해 필요한 의존관계들을 가져오게 된다.
   - ```jdbc:h2:~/jpashop```(최소 한번, 세션키 유지한 상태로 실행)
   - ```~/jpashop.mv.db```파일 생성 확인
   - 이후부터는 ```jdbc:h2:tcp://localhost/~/jpashop``` 이렇게 접속
+
+## JPA와 DB 설정, 동작확인
+
+EntityManager를 통한 모든 데이터 변경은 항상 트랜잭션 안에서 이루어져야 한다.
+- Entity, Repository 동작 확인
+- jar 빌드해서 동작 확인
+
+> 참고: 스프링 부트를 통해 복잡한 설정이 다 자동화 되었다. ```persistence.xml```도 없고, ```LaclContainerEntityManagerFactoryBean```도 없다.
+> 스프링 부터를 통한 추가 설정은 스프링 부트 매뉴얼을 참고하고, 스프링 부트를 사용하지 않고 순수 스프링과 JPA 설정 방법은 자바 ORM 표준 JPA 프로그래밍 책을 참고하자.
+
+### 쿼리 파라미터 로그 남기기
+- 로그에 다음을 추가하기 ```org.hibernate.type```: SQL 실행 파라미터를 로그로 남긴다.
+- 외부 라이브러리 사용
+  - https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
+스프링 부트를 사용하면 이 라이브러리만 추가하면 된다.
+```
+implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${version}")
+```
