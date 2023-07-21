@@ -63,3 +63,12 @@ Gradle을 통해 필요한 의존관계들을 가져오게 된다.
 
 - 스프링 부트 thymeleaf viewName 매핑
   - ```resources:templates/``` + {ViewName} + ```.html```
+
+## H2 데이터베이스 설치
+개발이나 테스트 용도로 가볍고 편리한 DB, 웹 화면 제공
+- 다운로드 및 설치
+- 데이터베이스 파일 생성 방법
+  - http://localhost:8082 접속
+  - ```jdbc:h2:~/jpashop```(최소 한번, 세션키 유지한 상태로 실행)
+  - ```~/jpashop.mv.db```파일 생성 확인
+  - 이후부터는 ```jdbc:h2:tcp://localhost/~/jpashop``` 이렇게 접속
