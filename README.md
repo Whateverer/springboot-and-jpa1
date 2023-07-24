@@ -257,3 +257,24 @@ class org.hibernate.collection.internal.PersistentBag
 ```spring.jpa.hibernate.naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy```
 
 ```spring.jpa.hibernate.naming.physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy```
+
+# 애플리케이션 구현 준비
+## 구현 요구사항
+- 회원 기능
+  - 회원 등록
+  - 회원 조회
+- 상품 기능
+  - 상품 등록
+  - 상품 수정
+  - 상품 조회
+- 주문 기능
+  - 상품 주문
+  - 주문 내역 조회
+  - 주문 취소
+
+**예제를 단순화하기 위해 다음 기능은 구현X**
+- 로그인과 권한 관리X
+- 파라미터 검증과 예외 처리 단순화
+- 상품은 도서만 사용
+- 카테고리는 사용X
+- 배송 정보는 사용X
