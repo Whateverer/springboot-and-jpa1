@@ -296,3 +296,25 @@ class org.hibernate.collection.internal.PersistentBag
   - web
 
 **개발 순서: 서비스, 리포지토리 계층을 개발하고, 테스트 케이스를 작성해서 검증, 마지막에 웹 계층 적용**
+
+# 회원 도메인 개발
+**구현 기능**
+- 회원 등록
+- 회원 목록 조회
+
+**순서**
+- 회원 엔티티 코드 다시 보기
+- 회원 리포지토리 개발
+- 회원 서비스 개발
+- 회원 기능 테스트
+
+## 회원 리포지토리 개발
+### 기술 설명
+- ```@Repository```: 스프링 빈으로 등록, JPA 예외를 스프링 기반 예외로 변환
+- ```@PersistenceContext```: 엔티티 매니저(```EntityManager```) 주입
+- ```@PersistenceUnit```: 엔티티 매니저 팩토리(```EntityManagerFactory```) 주입
+### 기능 설명
+- ```save()```
+- ```findOne()```
+- ```findAll()```
+- ```findByName()```
