@@ -502,4 +502,6 @@ Querydsl 소개장에서 간단히 언급하겠다.
 > 예제에서는 뷰 템플릿을 최대한 간단하게 설명하려고, ```header```, ```footer```같은 템플릿 파일을 반복해서 포함한다. 다음 링크의 Hierarchical-style layouts을 참고하면 이런 부분도 중복을 제거할 수 있다.
 > https://www.thymeleaf.org/doc/articles/layouts.html
 
- 
+## 회원 등록
+- 폼 객체를 사용해서 화면 계층과 서비스 계층을 명확하게 분리한다.
+
