@@ -548,4 +548,13 @@ Querydsl 소개장에서 간단히 언급하겠다.
 - 변경 감지 기능 사용
 - 병합(```merge```) 사용
  
-### 
+### 변경 감지 기능 사용
+```java
+@Transactional
+void update(Item itemParam) {
+    Item findItem = em.find(Item.class, item.Param.getId()); // 같은 엔티티를 조회한다.
+        findItem.setPrice(itemParam.getPrice()); // 데이터를 수정한다.
+        }
+```
+영속성 컨텍스트에서 엔티티를 다시 조회한 후에 데이터를 수정하는 방법
+트랜잭션 안에서 엔티티를 다시 조회, 변경할 값 선택 -> 트랜잭션 커밋 시점에 변경 감지(Dirty Checking)이 동작해서 데이터베이스에 UPDATE SQL 실행
