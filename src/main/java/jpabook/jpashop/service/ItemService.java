@@ -4,6 +4,7 @@ import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.sql.Update;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,11 +22,11 @@ public class ItemService {
     }
 
     @Transactional
-    public void updateItem(Long itemId, Book param) {
+    public void updateItem(Long itemId, UpdateItemDto updateItemDto) {
         Item findItem = itemRepository.findOne(itemId); // 영속상태
-        findItem.setPrice(param.getPrice());
-        findItem.setName(param.getName());
-        findItem.setStockQuantity(param.getStockQuantity()); // transaction이 끝나면 commit이 된다. em.flush를 날린다.
+        findItem.setName(updateItemDto.getName());
+        findItem.setPrice(updateItemDto.getPrice());
+        findItem.setStockQuantity(updateItemDto.getStockQuantity()); // transaction이 끝나면 commit이 된다. em.flush를 날린다.
     }
 
     public List<Item> findItems() {
